@@ -16,6 +16,8 @@ namespace Bomb
         int[,] Arena = null;
         const int AreaSize = 15;
         const int ButtonSize = 30;
+        const int BombNumber = 10;
+        DateTime StartGameTime = new DateTime();
 
         public Form1()
         {
@@ -27,12 +29,15 @@ namespace Bomb
             Arena = new int[AreaSize, AreaSize];
             this.Width = AreaSize * ButtonSize+15;
             this.Height = AreaSize * ButtonSize + 34 + PnlInfo.Height;
-            CreateGame(15);
+            CreateBomb();
             CreateButton();
+            timer1.Enabled = true;
         }
 
-        private void CreateGame(int BombNumber)
+        private void CreateBomb()
         {
+            lbl_BombCounter.Text = BombNumber.ToString();
+            int cnt = BombNumber;
             Random rnd = new Random();
             while (true)
             {
@@ -40,10 +45,10 @@ namespace Bomb
                 int y = rnd.Next(0, AreaSize);
                 if(Arena[x,y]!=1)
                 {
-                    BombNumber--;
+                    cnt--;
                     Arena[x, y] = 1;
                 }
-                if (BombNumber < 0) break;
+                if (cnt == 0) break;
             }
         }
 
@@ -80,14 +85,28 @@ namespace Bomb
                 {
                     btn.BackgroundImage = null;
                     btn.Text = "";
+                    lbl_BombCounter.Text =(int.Parse(lbl_BombCounter.Text)+1).ToString();
                 }
                 else
                 {
                     btn.BackgroundImage = global::Bomb.Properties.Resources.bomb_25;
                     btn.Text = ".";
+                    lbl_BombCounter.Text = (int.Parse(lbl_BombCounter.Text) - 1).ToString();
                 }
             }
         }
+
+
+        private int CountButtonOnGame()
+        {
+            int res = 0;
+            foreach (var btn in PnlGame.Controls.OfType<Button>())
+            {
+                if (btn.Visible) res++;
+            }
+            return res;
+        }
+
 
         private void Btn_Click(object sender, EventArgs e)
         {
@@ -103,6 +122,8 @@ namespace Bomb
             {
                 ProccessCell(x, y);
             }
+
+            if (CountButtonOnGame() == BombNumber) WinGame();
         }
 
         private Button GetButtonByName(string buttonName)
@@ -146,20 +167,33 @@ namespace Bomb
 
         private void LoseGame()
         {
+            ShowBombCells();
+            timer1.Enabled = false;
+            MessageBox.Show("You Lose!");
+        }
+
+        private void WinGame()
+        {
+            ShowBombCells();
+            timer1.Enabled = false;
+            MessageBox.Show("You Win!");
+        }
+
+        private void ShowBombCells()
+        {
             foreach (Control item in PnlGame.Controls)
             {
-                if(item is Button)
+                if (item is Button)
                 {
                     Button btn = (Button)item;
                     int x = int.Parse(btn.Name.Split('_')[1]);
                     int y = int.Parse(btn.Name.Split('_')[2]);
-                    if(Arena[x,y]==1)
+                    if (Arena[x, y] == 1)
                         btn.BackgroundImage = global::Bomb.Properties.Resources.bomb_25;
                     Thread.Sleep(3);
                     Application.DoEvents();
                 }
             }
-            MessageBox.Show("You Lose!");
         }
 
         private int CountBombAround(int x,int y)
@@ -207,6 +241,12 @@ namespace Bomb
                 case 8: lbl.ForeColor = Color.DarkRed; break;
             }
             PnlGame.Controls.Add(lbl);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            StartGameTime = StartGameTime.AddSeconds(1);
+            lbl_time.Text = string.Format("{0:00}:{1:00}", StartGameTime.Minute,StartGameTime.Second);
         }
     }
 }
