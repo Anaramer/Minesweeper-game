@@ -1,0 +1,10 @@
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\bin\Debug\Bomb.exe.config
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\bin\Debug\Bomb.exe
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\bin\Debug\Bomb.pdb
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\obj\Debug\Bomb.csprojResolveAssemblyReference.cache
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\obj\Debug\Bomb.Form1.resources
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\obj\Debug\Bomb.Properties.Resources.resources
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\obj\Debug\Bomb.csproj.GenerateResource.Cache
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\obj\Debug\Bomb.csproj.CoreCompileInputs.cache
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\obj\Debug\Bomb.exe
+c:\users\amir\documents\visual studio 2017\Projects\Bomb\Bomb\obj\Debug\Bomb.pdb
