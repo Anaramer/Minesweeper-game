@@ -1,2 +1,3 @@
 # Minesweeper-game
-sample Minesweeper game in C# win app
+sample Minesweeper game in C# windows application
+
