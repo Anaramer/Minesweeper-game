@@ -1,6 +1,6 @@
 ﻿namespace Bomb
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PnlInfo = new System.Windows.Forms.Panel();
-            this.PnlGame = new System.Windows.Forms.Panel();
-            this.lbl_time = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_BombCounter = new System.Windows.Forms.Label();
+            this.lbl_time = new System.Windows.Forms.Label();
+            this.PnlGame = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PnlInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,13 +48,17 @@
             this.PnlInfo.Size = new System.Drawing.Size(531, 59);
             this.PnlInfo.TabIndex = 0;
             // 
-            // PnlGame
+            // lbl_BombCounter
             // 
-            this.PnlGame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlGame.Location = new System.Drawing.Point(0, 59);
-            this.PnlGame.Name = "PnlGame";
-            this.PnlGame.Size = new System.Drawing.Size(531, 489);
-            this.PnlGame.TabIndex = 1;
+            this.lbl_BombCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_BombCounter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BombCounter.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_BombCounter.Location = new System.Drawing.Point(454, 19);
+            this.lbl_BombCounter.Name = "lbl_BombCounter";
+            this.lbl_BombCounter.Size = new System.Drawing.Size(65, 21);
+            this.lbl_BombCounter.TabIndex = 1;
+            this.lbl_BombCounter.Text = "0";
+            this.lbl_BombCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_time
             // 
@@ -66,23 +70,20 @@
             this.lbl_time.Text = "00:00";
             this.lbl_time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // PnlGame
+            // 
+            this.PnlGame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlGame.Location = new System.Drawing.Point(0, 59);
+            this.PnlGame.Name = "PnlGame";
+            this.PnlGame.Size = new System.Drawing.Size(531, 489);
+            this.PnlGame.TabIndex = 1;
+            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lbl_BombCounter
-            // 
-            this.lbl_BombCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_BombCounter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_BombCounter.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_BombCounter.Location = new System.Drawing.Point(454, 19);
-            this.lbl_BombCounter.Name = "lbl_BombCounter";
-            this.lbl_BombCounter.Size = new System.Drawing.Size(65, 21);
-            this.lbl_BombCounter.TabIndex = 1;
-            this.lbl_BombCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,9 +93,9 @@
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Minesweeper";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.PnlInfo.ResumeLayout(false);
             this.ResumeLayout(false);

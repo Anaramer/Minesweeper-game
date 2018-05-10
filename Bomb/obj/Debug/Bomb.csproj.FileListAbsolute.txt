@@ -12,9 +12,10 @@ C:\Users\Amir\Desktop\git.repo\Bomb\bin\Debug\Bomb.exe.config
 C:\Users\Amir\Desktop\git.repo\Bomb\bin\Debug\Bomb.exe
 C:\Users\Amir\Desktop\git.repo\Bomb\bin\Debug\Bomb.pdb
 C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.csprojResolveAssemblyReference.cache
-C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.Form1.resources
 C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.Properties.Resources.resources
 C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.csproj.GenerateResource.Cache
 C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.csproj.CoreCompileInputs.cache
 C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.exe
 C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.pdb
+C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.Init.resources
+C:\Users\Amir\Desktop\git.repo\Bomb\obj\Debug\Bomb.MainForm.resources

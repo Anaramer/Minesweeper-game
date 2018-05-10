@@ -11,16 +11,20 @@ using System.Windows.Forms;
 
 namespace Bomb
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
+        const int ButtonSize = 25;
+
         int[,] Arena = null;
-        const int AreaSize = 15;
-        const int ButtonSize = 30;
-        const int BombNumber = 10;
+        int AreaSize;
+        int BombNumber;
+
         DateTime StartGameTime = new DateTime();
 
-        public Form1()
+        public MainForm(int AreaSize= 15, int BombNumber= 10)
         {
+            this.AreaSize = AreaSize;
+            this.BombNumber = BombNumber;
             InitializeComponent();
         }
 
@@ -29,12 +33,11 @@ namespace Bomb
             Arena = new int[AreaSize, AreaSize];
             this.Width = AreaSize * ButtonSize+15;
             this.Height = AreaSize * ButtonSize + 34 + PnlInfo.Height;
-            CreateBomb();
+            CreateRandomBomb();
             CreateButton();
-            timer1.Enabled = true;
         }
 
-        private void CreateBomb()
+        private void CreateRandomBomb()
         {
             lbl_BombCounter.Text = BombNumber.ToString();
             int cnt = BombNumber;
@@ -110,6 +113,7 @@ namespace Bomb
 
         private void Btn_Click(object sender, EventArgs e)
         {
+            if(!timer1.Enabled) timer1.Enabled = true;
             Button btn = (Button)sender;
             int x = int.Parse(btn.Name.Split('_')[1]);
             int y = int.Parse(btn.Name.Split('_')[2]);
