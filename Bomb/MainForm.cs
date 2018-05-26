@@ -174,6 +174,7 @@ namespace Bomb
             ShowBombCells();
             timer1.Enabled = false;
             MessageBox.Show("You Lose!");
+            Close();
         }
 
         private void WinGame()
